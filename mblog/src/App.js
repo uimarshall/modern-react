@@ -1,4 +1,6 @@
 import "./App.css";
+import Home from "./Home";
+import Navbar from "./Navbar";
 
 // A Component is a function, the function returns a JSX,
 // The JSX is compiled into html by Babel and injected to the DOM
@@ -9,7 +11,12 @@ function App() {
 	const claps = 75;
 	return (
 		<div className="App">
-			<header className="App-header">
+			<Navbar />
+			<div className="content">
+				{" "}
+				<Home />
+			</div>
+			{/* <header className="App-header">
 				<h1>My Coder Blog!</h1>
 				<div>
 					<h2>{title}</h2>
@@ -23,7 +30,7 @@ function App() {
 					rel="noopener noreferrer">
 					Learn React
 				</a>
-			</header>
+			</header> */}
 		</div>
 	);
 }
