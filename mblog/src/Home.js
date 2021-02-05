@@ -22,7 +22,7 @@ const Home = () => {
 			title: "develop good",
 			content:
 				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-			author: "Isaac",
+			author: "Abel",
 			id: 3,
 		},
 	]);
@@ -40,7 +40,11 @@ const Home = () => {
 	};
 	return (
 		<div className="home">
-			<BlogList blogs={blogs} title="New blogs" />
+			<BlogList blogs={blogs} title="All blogs" />
+			<BlogList
+				blogs={blogs.filter((blog) => blog.author === "Abel")}
+				title="Abel's blogs"
+			/>
 			<h2>{page}</h2>
 			<button onClick={handleClick}>Click</button>
 			<button onClick={(e) => handleClick2("Marshall", e)}>Click Me</button>
