@@ -26,6 +26,12 @@ const Home = () => {
 			id: 3,
 		},
 	]);
+
+	// keep the blogs that is not equsl to the 'id' received as params
+	const handleRemove = (id) => {
+		const newBlog = blogs.filter((blog) => blog.id !== id);
+		setBlogs(newBlog);
+	};
 	// const page = "Homepage";
 	// Array destructuring
 	const [page, setPage] = useState("Homepage");
@@ -40,7 +46,7 @@ const Home = () => {
 	};
 	return (
 		<div className="home">
-			<BlogList blogs={blogs} title="All blogs" />
+			<BlogList blogs={blogs} title="All blogs" handleRemove={handleRemove} />
 			<BlogList
 				blogs={blogs.filter((blog) => blog.author === "Abel")}
 				title="Abel's blogs"
