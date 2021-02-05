@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -26,6 +26,12 @@ const Home = () => {
 			id: 3,
 		},
 	]);
+	const [name, setName] = useState("Daddy");
+	// useEffect is a func that runs on first render and re-render to the DOM
+	useEffect(() => {
+		console.log("use effect runs on first render and re-render");
+		console.log(name);
+	}, [name]);
 
 	// keep the blogs that is not equsl to the 'id' received as params
 	const handleRemove = (id) => {
@@ -54,6 +60,8 @@ const Home = () => {
 			<h2>{page}</h2>
 			<button onClick={handleClick}>Click</button>
 			<button onClick={(e) => handleClick2("Marshall", e)}>Click Me</button>
+			<button onClick={() => setName("Mummy")}>Change Name</button>
+			<p>{name}</p>
 		</div>
 	);
 };
