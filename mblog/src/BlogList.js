@@ -1,7 +1,7 @@
 // import React from 'react'
 // import PropTypes from 'prop-types'
 
-const BlogList = ({ blogs, title, handleRemove }) => {
+const BlogList = ({ blogs, title }) => {
 	// const blogs = props.blogs;
 	// const title = props.title;
 	return (
@@ -12,7 +12,7 @@ const BlogList = ({ blogs, title, handleRemove }) => {
 					<div className="blog-preview" key={blog.id}>
 						<h1>{blog.title}</h1>
 						<p>Author: {blog.author}</p>
-						<button onClick={() => handleRemove(blog.id)}>Delete</button>
+						<button onClick={() => console.log('goog')}>Delete</button>
 					</div>
 				);
 			})}
