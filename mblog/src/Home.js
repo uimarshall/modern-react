@@ -6,16 +6,28 @@ const Home = () => {
 	// Array destructuring
 	const [blogs, setBlogs] = useState(null);
 	const [isLoading, setIsLoading] = useState(true)
+	const [error, setError] = useState(null)
 	
 	// useEffect is a func that runs on first render and re-render to the DOM
 	useEffect(() => {
 		console.log("use effect runs on first render and re-render");
 		fetch("http://localhost:8000/blogs")
-		.then(res=> {return res.json()})
+		.then(res=> {
+			if (!res.ok) {
+				throw Error("Unable to fetch the data for this resource!")
+				
+			}
+			return res.json()
+		})
 		  .then(data=>{
 			  setBlogs(data);
 			//   After loading the data setIsLoading to false
 			setIsLoading(false)
+			setError(null)
+			}).catch(err=>{
+				setIsLoading(false)
+				// console.log(err.message);
+				setError(err.message)
 			})
 		
 	}, []);
@@ -24,6 +36,7 @@ const Home = () => {
 		<div className="home">
 			{/* Conditional loading */}
 			{isLoading && <div>Loading...</div>}
+			{error && <h1>{error}</h1>}
 		{blogs && <BlogList blogs={blogs} title="All blogs" />}	
 		
 			
