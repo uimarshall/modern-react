@@ -5,24 +5,27 @@ import BlogList from "./BlogList";
 const Home = () => {
 	// Array destructuring
 	const [blogs, setBlogs] = useState(null);
+	const [isLoading, setIsLoading] = useState(true)
 	
 	// useEffect is a func that runs on first render and re-render to the DOM
 	useEffect(() => {
 		console.log("use effect runs on first render and re-render");
 		fetch("http://localhost:8000/blogs")
 		.then(res=> {return res.json()})
-		  .then(data=>{setBlogs(data);})
+		  .then(data=>{
+			  setBlogs(data);
+			//   After loading the data setIsLoading to false
+			setIsLoading(false)
+			})
 		
 	}, []);
 
 	return (
 		<div className="home">
+			{/* Conditional loading */}
+			{isLoading && <div>Loading...</div>}
 		{blogs && <BlogList blogs={blogs} title="All blogs" />}	
-		{blogs && <BlogList
-				blogs={blogs.filter((blog) => blog.author === "Abel")}
-				title="Abel's blogs"
-				
-			/>}	
+		
 			
 		</div>
 	);
