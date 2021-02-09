@@ -1,36 +1,39 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
+import useFetch from "./customHooks/useFetch";
+
 
 const Home = () => {
+	const{data:blogs, isLoading,error}=useFetch('http://localhost:8000/blogs')
 	// Array destructuring
-	const [blogs, setBlogs] = useState(null);
-	const [isLoading, setIsLoading] = useState(true)
-	const [error, setError] = useState(null)
+	// const [blogs, setBlogs] = useState(null);
+	// const [isLoading, setIsLoading] = useState(true)
+	// const [error, setError] = useState(null)
 	
 	// useEffect is a func that runs on first render and re-render to the DOM
-	useEffect(() => {
-		console.log("use effect runs on first render and re-render");
-		fetch("http://localhost:8000/blogs")
-		.then(res=> {
-			if (!res.ok) {
-				throw Error("Unable to fetch the data for this resource!")
+	// useEffect(() => {
+	// 	console.log("use effect runs on first render and re-render");
+	// 	fetch("http://localhost:8000/blogs")
+	// 	.then(res=> {
+	// 		if (!res.ok) {
+	// 			throw Error("Unable to fetch the data for this resource!")
 				
-			}
-			return res.json()
-		})
-		  .then(data=>{
-			  setBlogs(data);
-			//   After loading the data setIsLoading to false
-			setIsLoading(false)
-			setError(null)
-			}).catch(err=>{
-				setIsLoading(false)
-				// console.log(err.message);
-				setError(err.message)
-			})
+	// 		}
+	// 		return res.json()
+	// 	})
+	// 	  .then(data=>{
+	// 		  setBlogs(data);
+	// 		//   After loading the data setIsLoading to false
+	// 		setIsLoading(false)
+	// 		setError(null)
+	// 		}).catch(err=>{
+	// 			setIsLoading(false)
+	// 			// console.log(err.message);
+	// 			setError(err.message)
+	// 		})
 		
-	}, []);
+	// }, []);
 
 	return (
 		<div className="home">
