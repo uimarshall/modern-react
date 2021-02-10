@@ -39,7 +39,7 @@ const Home = () => {
 			{/* Conditional loading */}
 			{isLoading && <div>Loading...</div>}
 			{error && <h1>{error}</h1>}
-		{blogs && <BlogList blogs={blogs} title="All blogs" />}	
+		    {blogs && <BlogList blogs={blogs} title="All blogs" />}	
 		
 			
 		</div>
