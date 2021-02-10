@@ -1,24 +1,34 @@
-
 {
-    "blogs":[{
-			"title": "play wright",
-			"content":
-				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-			"author": "Abel",
-			"id": 1
-		},
-		{
-			"title": "anchor man",
-			"content":
-				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-			"author": "Cain",
-			"id": 2
-		},
-		{
-			"title": "develop good",
-			"content":
-				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-			"author": "Abel",
-			"id": 3
-		}]
+  "blogs": [
+    {
+      "title": "play wright",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+      "author": "Abel",
+      "id": 1
+    },
+    {
+      "title": "anchor man",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+      "author": "Cain",
+      "id": 2
+    },
+    {
+      "title": "develop good",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+      "author": "Abel",
+      "id": 3
+    },
+    {
+      "title": "Battle joy",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu ligula suscipit, auctor dolor in, tempus mauris. Nulla fringilla mollis condimentum. Duis vel magna augue. Pellentesque scelerisque massa eu tortor tempor porttitor. Integer tempor tincidunt ante, sed ultricies nisi ultricies nec. Nullam sed nunc eleifend, aliquam sapien eu, fermentum diam.",
+      "author": "isaac",
+      "id": 4
+    },
+    {
+      "title": "langley toy",
+      "content": "Sed at molestie est. Nulla ac dignissim eros, vel egestas erat. Etiam bibendum enim mauris, sed consequat mi tristique sed. Curabitur eget risus vehicula, cursus ligula ac, fringilla mi. Maecenas at tincidunt neque. In at accumsan enim, nec vestibulum arcu. Integer a est nec dui consectetur varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac lorem suscipit, scelerisque mauris sit amet, tempor arcu. Proin suscipit, augue vel fermentum suscipit, tellus leo ultricies arcu, vel elementum est ex sit amet massa. Aenean vestibulum urna eu feugiat auctor.",
+      "author": "jacob",
+      "id": 5
+    }
+  ]
 }

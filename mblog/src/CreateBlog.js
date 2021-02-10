@@ -6,6 +6,21 @@ const CreateBlog = () => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [author, setAuthor] = useState('isaac')
+  const [isLoading, setIsLoading] = useState(false)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const blog = { title, content, author }
+    setIsLoading(true)
+    // console.log(blog)
+    fetch('http://localhost:8000/blogs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(blog),
+    }).then(() => {
+      console.log('new blog added')
+      setIsLoading(false)
+    })
+  }
   return (
     <div className="create">
       <h2>Create new Blog</h2>
@@ -14,7 +29,7 @@ const CreateBlog = () => {
           You entered: <span style={{ color: '#fe396d' }}>{title}</span>
         </p>
       )}
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="">Blog title</label>
         <input
           type="text"
@@ -33,7 +48,12 @@ const CreateBlog = () => {
           <option value="isaac">isaac</option>
           <option value="jacob">jacob</option>
         </select>
-        <button type="submit">Add Blog</button>
+        {!isLoading && <button type="submit">Add Blog</button>}
+        {isLoading && (
+          <button type="submit" disabled>
+            Adding Blog...
+          </button>
+        )}
       </form>
     </div>
   )
