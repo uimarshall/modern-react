@@ -1,6 +1,8 @@
 // import React from 'react'
 // import PropTypes from 'prop-types'
 
+import { Link } from "react-router-dom";
+
 const BlogList = ({ blogs, title }) => {
 	// const blogs = props.blogs;
 	// const title = props.title;
@@ -10,9 +12,12 @@ const BlogList = ({ blogs, title }) => {
 			{blogs.map((blog) => {
 				return (
 					<div className="blog-preview" key={blog.id}>
-						<h1>{blog.title}</h1>
-						<p>Author: {blog.author}</p>
-						<button onClick={() => console.log('goog')}>Delete</button>
+						<Link to={`/blogs/${blog.id}`}>
+							<h1>{blog.title}</h1>
+							<p>Author: {blog.author}</p>
+							<button onClick={() => console.log('goog')}>Delete</button>
+						</Link>
+						
 					</div>
 				);
 			})}

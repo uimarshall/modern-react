@@ -3,6 +3,7 @@ import Home from "./Home";
 import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import CreateBlog from "./CreateBlog";
+import BlogDetails from "./BlogDetails";
 
 
 // A Component is a function, the function returns a JSX,
@@ -24,6 +25,9 @@ function App() {
 					</Route>
 					<Route path="/create">
 						<CreateBlog />
+					</Route>
+					<Route path="/blogs/:route_params">
+						<BlogDetails />
 					</Route>
 				</Switch>
 			</div>
