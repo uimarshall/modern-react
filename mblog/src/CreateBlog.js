@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const CreateBlog = () => {
   // The state is kept in sync with the value of the input
@@ -7,6 +8,7 @@ const CreateBlog = () => {
   const [content, setContent] = useState('')
   const [author, setAuthor] = useState('isaac')
   const [isLoading, setIsLoading] = useState(false)
+  const history = useHistory()
   const handleSubmit = (e) => {
     e.preventDefault()
     const blog = { title, content, author }
@@ -19,6 +21,8 @@ const CreateBlog = () => {
     }).then(() => {
       console.log('new blog added')
       setIsLoading(false)
+      //   history.go(-1)
+      history.push('/')
     })
   }
   return (
